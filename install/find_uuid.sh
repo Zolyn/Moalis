@@ -18,7 +18,7 @@ while true; do
 done
 
 if [ -z "$uuid" ]; then
-    echo 0
+    echo ""
 else
     echo "$uuid"
 fi

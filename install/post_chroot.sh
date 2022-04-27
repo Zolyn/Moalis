@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-dir=$(basename $0)
+dir=$(dirname $0)
 HOSTNAME="arch"
 CPU_BRAND="amd"
 
@@ -40,6 +40,11 @@ refind-install
 echo "Searching partition UUID"
 ROOT_UUID=$(BLOCK_DEVICE=$ROOT_PART bash "$dir/find_uuid.sh")
 SWAP_UUID=$(BLOCK_DEVICE=$SWAP_PART bash "$dir/find_uuid.sh")
+
+if [ -z $ROOT_UUID ] || [ -z $SWAP_UUID ];then
+    echo "Cannot find partition UUID"
+    exit
+fi
 
 echo "Replacing /boot/refind_linux.conf"
 mv /boot/refind_linux.conf /boot/refind_linux.conf.bak
