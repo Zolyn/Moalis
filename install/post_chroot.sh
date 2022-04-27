@@ -1,36 +1,9 @@
 #!/bin/bash
 set -e
 
+dir=$(basename $0)
 HOSTNAME="arch"
 CPU_BRAND="amd"
-
-find_uuid() {
-    partinfo=$(blkid | grep $1)
-    index=1
-
-    while true
-    do
-      fragment=$(echo "$partinfo" | awk -F ' ' '{print $'$index'}')
-      uuid=$(echo "$fragment" | grep "UUID")
-      echo "$fragment"
-
-      if [ -n "$uuid" ];then
-        break
-      fi
-
-      if [ -z "$fragment" ];then
-        break
-      fi
-
-      ((index++))
-    done
-
-    if [ -z "$uuid" ];then
-      0
-    else
-      $uuid
-    fi
-}
 
 echo "Setting hostname"
 echo $HOSTNAME > /etc/hostname
@@ -65,8 +38,8 @@ pacman -S refind --confirm
 refind-install
 
 echo "Searching partition UUID"
-ROOT_UUID=$(blkid | grep $ROOT_PART | awk -F '[ :]' '{print $3}')
-SWAP_UUID=$(blkid | grep $SWAP_PART | awk -F '[ :]' '{print $3}')
+ROOT_UUID=$(BLOCK_DEVICE=$ROOT_PART bash "$dir/find_uuid.sh")
+SWAP_UUID=$(BLOCK_DEVICE=$SWAP_PART bash "$dir/find_uuid.sh")
 
 echo "Replacing /boot/refind_linux.conf"
 mv /boot/refind_linux.conf /boot/refind_linux.conf.bak
