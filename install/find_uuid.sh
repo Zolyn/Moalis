@@ -1,5 +1,5 @@
 #!/bin/bash
-partinfo=$(blkid | grep $BLOCK_DEVICE)
+partinfo=$(blkid | grep "$BLOCK_DEVICE")
 index=1
 
 while true; do
