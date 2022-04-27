@@ -1,4 +1,5 @@
 #!/bin/bash
+# Useless script, maybe.
 set -e
 
 SOFTWARE_MIRROR="https://opentuna.cn/archlinux/\$repo/os/\$arch"

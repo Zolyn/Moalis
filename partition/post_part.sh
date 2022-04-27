@@ -9,6 +9,7 @@ SWAP_PART="/dev/sdb2"
 echo "Formatting partition"
 mkswap -f $SWAP_PART
 mkfs.btrfs -f -L $LABEL $ROOT_PART
+#mkfs.fat -F 32 $EFI_PART
 
 echo "Mounting Btrfs partition"
 mount -t btrfs -o compress=zstd $ROOT_PART /mnt
