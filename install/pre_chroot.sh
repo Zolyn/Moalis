@@ -4,7 +4,7 @@ set -e
 dir=$(dirname $0)
 
 echo "[pre_chroot] Installing system"
-pacstrap /mnt base base-devel linux linux-firmware zsh zsh-completions git dhcpcd nano vim sudo
+pacstrap /mnt base base-devel linux linux-firmware git dhcpcd nano vim sudo
 
 echo "[pre_chroot] Generating fstab"
 genfstab -U /mnt > /mnt/etc/fstab
