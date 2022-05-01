@@ -70,6 +70,6 @@ log "Installing graphic card drivers"
 paru -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon --noconfirm
 
 log "Intalling packages"
-paru -S baobab bat blanket cpupower downgrade eom exa evince feh ffmpeg flameshot fzf github-cli gnupg gtk2 gtk3 htop imagemagick inotify-tools kdeconnect krita marktext-bin microsoft-edge-dev-bin mpd mpv neofetch numlockx net-tools peek p7zip paprefs pavucontrol pulseaudio picgo-appimage ranger redshift screenfetch screenkey scrot tar thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tldr toilet unrar unzip  ventoy-bin visual-studio-code-bin vlc wget wps-office-cn wps-office-mime-cn wps-office-mui-zh-cn xdman xdotool xss-lock xwinwrap-git yad yadm yay --noconfirm
+paru -S baobab bat blanket boxes cpupower cowsay cmatrix downgrade eom exa evince feh ffmpeg flameshot figlet fzf github-cli gnupg gtk2 gtk3 htop imagemagick inotify-tools kdeconnect krita lolcat marktext-bin microsoft-edge-dev-bin mpd mpv neofetch numlockx net-tools peek p7zip paprefs pavucontrol pulseaudio picgo-appimage ranger redshift screenfetch screenkey scrot tar thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tldr toilet unrar unzip  ventoy-bin visual-studio-code-bin vlc wget wps-office-cn wps-office-mime-cn wps-office-mui-zh-cn xdman xdotool xss-lock xwinwrap-git yad yadm yay --noconfirm
 
 log "Done"

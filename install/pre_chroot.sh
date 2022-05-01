@@ -17,6 +17,7 @@ cat /mnt/etc/fstab
 log "Copying scripts"
 cp "$dir/post_chroot.sh" /mnt/internal_post_chroot.sh
 cp "$dir/find_uuid.sh" /mnt/find_uuid.sh
+cp "$dir/post_install.sh" /mnt/post_install.sh
 
 log "Changing system environment"
 arch-chroot /mnt

@@ -10,6 +10,7 @@ Useful for those who want to install Arch Linux and rEFind on Btrfs.
 4. edit `./partition/post_part.sh`, modify the variables to meet your needs, then run it
 5. run `./install/pre_chroot.sh`, and you will switch to the newly installed Arch Linux system
 6. run `/post_chroot.sh` (Note that this script is in root directory)
+7. run `/post_install.sh` to configure your system, or edit it to meet your needs before you run it.
 
 **TIP:** It is recommended to use `less` to see the full outputs of each script. (e.g. `bash ./partition/post_part.sh | less`)
 
