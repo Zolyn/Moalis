@@ -10,7 +10,7 @@ USERNAME="zorin"
 
 log "Adding user $USERNAME"
 useradd -m -G wheel -s /bin/bash $USERNAME
-echo "%wheel ALL=(ALL) ALL" >> /etc/hosts
+echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 log "Setting password for user $USERNAME"
 passwd $USERNAME

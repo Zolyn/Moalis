@@ -11,8 +11,8 @@ if [ "$USER" == "root" ];then
 fi
 
 log "Installing fonts"
-pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lite wqy-bitmapfont --noconfirm
-pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --noconfirm
+paru -S adobe-source-han-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lite wqy-bitmapfont --noconfirm
+paru -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --noconfirm
 
 log "Installing Fcitx5 and rime"
 paru -S fcitx-im fcitx-rime rime-cloverpinyin --noconfirm
