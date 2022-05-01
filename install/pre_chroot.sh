@@ -1,18 +1,22 @@
 #!/bin/bash
 set -e
 
+log() {
+    echo "[Moalis:pre_chroot] $1"
+}
+
 dir=$(dirname $0)
 
-echo "[pre_chroot] Installing system"
-pacstrap /mnt base base-devel linux linux-firmware git dhcpcd nano vim sudo
+log "Installing system"
+pacstrap /mnt base base-devel linux linux-firmware git dhcpcd nano vim sudo networkmanager
 
-echo "[pre_chroot] Generating fstab"
+log "Generating fstab"
 genfstab -U /mnt > /mnt/etc/fstab
 cat /mnt/etc/fstab
 
-echo "[pre_chroot] Copying scripts"
+log "Copying scripts"
 cp "$dir/post_chroot.sh" /mnt/internal_post_chroot.sh
 cp "$dir/find_uuid.sh" /mnt/find_uuid.sh
 
-echo "[pre_chroot] Changing system environment"
+log "Changing system environment"
 arch-chroot /mnt

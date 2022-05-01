@@ -1,28 +1,32 @@
 #!/bin/bash
 set -e
 
+log() {
+    echo "[Moalis:post_part] $1"
+}
+
 LABEL="Arch"
 EFI_PART="/dev/nvme0n1p6"
 ROOT_PART="/dev/nvme0n1p7"
 SWAP_PART="/dev/sdb2"
 
-echo "[post_part] Formatting partition"
+log "Formatting partition"
 mkswap -f $SWAP_PART
 mkfs.btrfs -f -L $LABEL $ROOT_PART
 #mkfs.fat -F 32 $EFI_PART
 
-echo "[post_part] Mounting Btrfs partition"
+log "Mounting Btrfs partition"
 mount -t btrfs -o compress=zstd $ROOT_PART /mnt
 
-echo "[post_part] Creating subvolumes"
+log "Creating subvolumes"
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 btrfs subvolume list -p /mnt
 
-echo "[post_part] Unmounting Btrfs partition"
+log "Unmounting Btrfs partition"
 umount /mnt
 
-echo "[post_part] Mounting subvolumes"
+log "Mounting subvolumes"
 mount -t btrfs -o subvol=/@,compress=zstd $ROOT_PART /mnt
 mkdir /mnt/home
 mount -t btrfs -o subvol=/@home,compress=zstd $ROOT_PART /mnt/home
@@ -30,14 +34,14 @@ mkdir -p /mnt/boot/efi
 mount $EFI_PART /mnt/boot/efi
 swapon $SWAP_PART
 
-echo "[post_part] Checking status"
+log "Checking status"
 df -h
 free -h
 
-echo "[post_part] Writing parition info for script"
+log "Writing parition info for script"
 cat > /mnt/post_chroot.sh << EOF
 #!/bin/bash
 ROOT_PART=$ROOT_PART SWAP_PART=$SWAP_PART bash post_chroot.sh
 EOF
 
-echo "[post_part] Done."
+log "Done."

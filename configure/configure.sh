@@ -2,7 +2,7 @@
 set -e
 
 log() {
-    echo "[Moalis:user] $1"
+    echo "[Moalis:configure] $1"
 }
 
 USERNAME="zorin"
@@ -36,7 +36,7 @@ pacman -S lightdm --confirm
 systemctl enable lightdm
 
 log "Installing fonts"
-pacman -S adobe-source-hans-serif-cn-fonts wqy-zenhei wqy-microhei --confirm
+pacman -S adobe-source-hans-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lite wqy-bitmapfont --confirm
 pacman -S pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --confirm
 
 log "Installing paru"
@@ -68,3 +68,8 @@ paru -S timeshift --noconfirm
 
 log "Installing graphic card drivers"
 paru -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon --noconfirm
+
+log "Intalling packages"
+paru -S baobab bat blanket cpupower downgrade eom exa evince feh ffmpeg flameshot fzf github-cli gnupg gtk2 gtk3 htop imagemagick inotify-tools kdeconnect krita marktext-bin microsoft-edge-dev-bin mpd mpv neofetch numlockx net-tools peek p7zip paprefs pavucontrol pulseaudio picgo-appimage ranger redshift screenfetch screenkey scrot tar thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tldr toilet unrar unzip  ventoy-bin visual-studio-code-bin vlc wget wps-office-cn wps-office-mime-cn wps-office-mui-zh-cn xdman xdotool xss-lock xwinwrap-git yad yadm yay --noconfirm
+
+log "Done"
