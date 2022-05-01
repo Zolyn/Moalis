@@ -22,7 +22,7 @@ pacman -Syu --noconfirm
 pacman -S archlinuxcn-keyring --noconfirm
 
 log "Fixing archlinuxcn-keyring"
-pacman -Syu haveged
+pacman -Syu haveged --noconfirm
 systemctl start haveged
 systemctl enable haveged
 
