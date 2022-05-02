@@ -21,4 +21,7 @@ timedatectl status
 log "Configuring software mirror"
 echo "Server = $SOFTWARE_MIRROR" > /etc/pacman.d/mirrorlist
 
+log "Syncing software database"
+pacman -Sy
+
 log "Done."

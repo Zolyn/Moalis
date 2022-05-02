@@ -41,7 +41,7 @@ free -h
 log "Writing parition info for script"
 cat > /mnt/post_chroot.sh << EOF
 #!/bin/bash
-ROOT_PART=$ROOT_PART SWAP_PART=$SWAP_PART bash post_chroot.sh
+ROOT_PART=$ROOT_PART SWAP_PART=$SWAP_PART bash internal_post_chroot.sh
 EOF
 
 log "Done."
