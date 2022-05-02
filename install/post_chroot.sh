@@ -41,8 +41,11 @@ log "Patching /etc/mkinitcpio.conf"
 patch /etc/mkinitcpio.conf "$dir/patches/mkinitcpio_amdgpu.patch"
 # patch /etc/mkinitcpio.conf "$dir/patches/mkinitcpio_intel_touchpad.patch"
 
+log "Removing old refind configuration"
+rm /boot/efi/EFI/refind/refind.conf
+
 log "Installing refind"
-pacman -S refind --noconfirm
+pacman -S refind ntfs-3g --noconfirm
 refind-install
 
 log "Searching partition UUID"
