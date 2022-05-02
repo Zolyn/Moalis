@@ -1,0 +1,28 @@
+--- /etc/pacman.conf	2022-03-06 08:42:33.000000000 +0000
++++ pacman_patch.conf	2022-05-02 03:59:38.612657292 +0000
+@@ -30,7 +30,7 @@
+ 
+ # Misc options
+ #UseSyslog
+-#Color
++Color
+ #NoProgressBar
+ CheckSpace
+ #VerbosePkgLists
+@@ -90,11 +90,14 @@
+ #[multilib-testing]
+ #Include = /etc/pacman.d/mirrorlist
+ 
+-#[multilib]
+-#Include = /etc/pacman.d/mirrorlist
++[multilib]
++Include = /etc/pacman.d/mirrorlist
+ 
+ # An example of a custom package repository.  See the pacman manpage for
+ # tips on creating your own repositories.
+ #[custom]
+ #SigLevel = Optional TrustAll
+ #Server = file:///home/custompkgs
++
++[archlinuxcn]
++Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
