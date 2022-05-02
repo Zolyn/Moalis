@@ -37,6 +37,13 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 log "Installing ucode"
 pacman -S "$CPU_BRAND-ucode" --confirm
 
+log "Patching /etc/mkinitcpio.conf"
+patch /etc/mkinitcpio.conf "$dir/../patches/mkinitcpio_common.patch"
+# patch /etc/mkinitcpio.conf "$dir/../patches/mkinitcpio_intel_touchpad.patch"
+
+log "Regenerating initramfs image"
+mkinitcpio -P
+
 log "Installing refind"
 pacman -S refind --confirm
 refind-install
