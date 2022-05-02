@@ -17,30 +17,28 @@ passwd $USERNAME
 
 log "Configuring pacman"
 cat >> /etc/pacman.conf << EOF
-Color
-
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 
 [archlinuxcn]
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch
 EOF
-pacman -Syu --confirm
-pacman -S archlinuxcn-keyring
+pacman -Syu --noconfirm
+pacman -S archlinuxcn-keyring --noconfirm
 
 log "Installing X server"
-pacman -S xorg xorg-server --confirm
+pacman -S xorg xorg-server --noconfirm
 
 log "Installing LightDM"
-pacman -S lightdm --confirm
+pacman -S lightdm --noconfirm
 systemctl enable lightdm
 
 log "Installing fonts"
-pacman -S adobe-source-hans-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lite wqy-bitmapfont --confirm
-pacman -S pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --confirm
+pacman -S adobe-source-hans-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lite wqy-bitmapfont --noconfirm
+pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --noconfirm
 
 log "Installing paru"
-pacman -S paru --confirm
+pacman -S paru --noconfirm
 
 log "Installing Fcitx5 and rime"
 paru -S fcitx-im fcitx-material-color fcitx-rime  rime-cloverpinyin --noconfirm

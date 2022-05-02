@@ -39,7 +39,7 @@ df -h
 free -h
 
 log "Writing parition info for script"
-cat > /mnt/post_chroot.sh << EOF
+cat > /mnt/Moalis/post_chroot.sh << EOF
 #!/bin/bash
 ROOT_PART=$ROOT_PART SWAP_PART=$SWAP_PART bash internal_post_chroot.sh
 EOF
