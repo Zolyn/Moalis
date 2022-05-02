@@ -30,17 +30,17 @@ pacman -S lightdm --noconfirm
 systemctl enable lightdm
 
 log "Installing fonts"
-pacman -S adobe-source-hans-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lite wqy-bitmapfont --noconfirm
+pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lite wqy-bitmapfont --noconfirm
 pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --noconfirm
 
 log "Installing paru"
 pacman -S paru --noconfirm
 
 log "Installing Fcitx5 and rime"
-paru -S fcitx-im fcitx-material-color fcitx-rime  rime-cloverpinyin --noconfirm
+paru -S fcitx-im fcitx-rime rime-cloverpinyin --noconfirm
 
 log "Configuring rime"
-mkdir $UHOME/.local/share/fcitx5/rime
+mkdir -p $UHOME/.local/share/fcitx5/rime
 cat > $UHOME/.local/share/fcitx5/rime/default.custom.yaml << EOF
 patch:
   "menu/page_size": 8

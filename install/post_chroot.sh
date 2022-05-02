@@ -72,6 +72,9 @@ EOF
 # cp /usr/share/refind/drivers_x64/btrfs_x64.efi /boot/efi/EFI/refind/drivers_x64/btrfs_x64.efi
 ls -ahl /boot/efi/EFI/refind/drivers_x64/
 
+log "Setting dhcpcd"
+systemctl enable dhcpcd
+
 log "Setting password for root"
 passwd root
 

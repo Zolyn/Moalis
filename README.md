@@ -11,7 +11,8 @@ Useful for those who want to install Arch Linux and rEFind on Btrfs.
 5. run `./install/pre_chroot.sh`, and you will switch to the newly installed Arch Linux system
 6. `cd /Moalis`
 7. run `./post_chroot.sh`
-8. run `./post_install.sh` to configure your system, or edit it to meet your needs before you run it.
+8. Ensure your system is connected to the Internet
+9. run `./post_install.sh` to configure your system, or edit it to meet your needs before you run it.
 
 **TIP:** It is recommended to use `less` to see the full outputs of each script. (e.g. `bash ./partition/post_part.sh | less`)
 
