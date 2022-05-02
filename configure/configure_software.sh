@@ -15,7 +15,7 @@ paru -S adobe-source-han-serif-cn-fonts wqy-zenhei wqy-microhei wqy-microhei-lit
 paru -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --noconfirm
 
 log "Installing Fcitx5 and rime"
-paru -S fcitx-im fcitx-rime rime-cloverpinyin --noconfirm
+paru -S fcitx5-im fcitx5-rime rime-cloverpinyin --noconfirm
 
 log "Configuring rime"
 mkdir -p ~/.local/share/fcitx5/rime
