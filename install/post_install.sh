@@ -5,6 +5,7 @@ log() {
     echo "[Moalis:configure] $1"
 }
 
+dir=$(dirname $0)
 USERNAME="zorin"
 UHOME="/home/$USERNAME"
 
@@ -16,13 +17,8 @@ log "Setting password for user $USERNAME"
 passwd $USERNAME
 
 log "Configuring pacman"
-cat >> /etc/pacman.conf << EOF
-[multilib]
-Include = /etc/pacman.d/mirrorlist
+patch /etc/pacman.conf "$dir/patches/pacman_conf.patch"
 
-[archlinuxcn]
-Server = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch
-EOF
 pacman -Syu --noconfirm
 pacman -S archlinuxcn-keyring --noconfirm
 
