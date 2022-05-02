@@ -20,5 +20,5 @@ done
 if [ -z "$uuid" ]; then
     echo ""
 else
-    echo "$uuid"
+    echo "$uuid" | sed 's/\"//g'
 fi

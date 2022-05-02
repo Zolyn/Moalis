@@ -15,7 +15,6 @@ genfstab -U /mnt > /mnt/etc/fstab
 cat /mnt/etc/fstab
 
 log "Copying scripts"
-mkdir /mnt/Moalis
 cp "$dir/post_chroot.sh" /mnt/Moalis/internal_post_chroot.sh
 cp "$dir/find_uuid.sh" /mnt/Moalis/find_uuid.sh
 cp "$dir/post_install.sh" /mnt/Moalis/post_install.sh
