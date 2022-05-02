@@ -1,0 +1,11 @@
+--- /etc/lightdm/lightdm.conf	2020-08-14 20:54:32.000000000 +0800
++++ lightdm_patch.conf	2022-05-02 13:16:18.539314147 +0800
+@@ -99,7 +99,7 @@
+ #xdmcp-manager=
+ #xdmcp-port=177
+ #xdmcp-key=
+-#greeter-session=example-gtk-gnome
++greeter-session=lightdm-webkit2-greeter
+ #greeter-hide-users=false
+ #greeter-allow-guest=true
+ #greeter-show-manual-login=false
