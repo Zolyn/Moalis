@@ -17,7 +17,8 @@ cat /mnt/etc/fstab
 log "Copying scripts"
 cp "$dir/post_chroot.sh" /mnt/Moalis/internal_post_chroot.sh
 cp "$dir/find_uuid.sh" /mnt/Moalis/find_uuid.sh
-cp "$dir/post_install.sh" /mnt/Moalis/post_install.sh
+cp "$dir/../configure/configure_basic.sh" /mnt/Moalis/configure_basic.sh
+cp "$dir/../configure/configure_software.sh" /mnt/Moalis/configure_software.sh
 
 log "Copying patches"
 cp -r "$dir/../patches" /mnt/Moalis
