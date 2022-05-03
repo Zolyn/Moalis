@@ -4,7 +4,7 @@ set -e
 dir=$(dirname $0)
 HOSTNAME="arch"
 CPU_BRAND="amd"
-RESOLUTION="1920x1080"
+RESOLUTION="1920 1080"
 
 log() {
     echo "[Moalis:post_chroot] $1"
