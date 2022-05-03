@@ -4,6 +4,7 @@ set -e
 dir=$(dirname $0)
 HOSTNAME="arch"
 CPU_BRAND="amd"
+RESOLUTION="1920x1080"
 
 log() {
     echo "[Moalis:post_chroot] $1"
@@ -68,6 +69,7 @@ cat /boot/refind_linux.conf
 
 echo "Configuring rEFind"
 cat >> /boot/efi/EFI/refind/refind.conf << EOF
+resolution $RESOLUTION
 extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
 also_scan_dirs boot,ESP2:EFI/linux/kernels,@/boot
 EOF
