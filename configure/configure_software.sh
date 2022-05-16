@@ -43,3 +43,5 @@ paru -S baobab bat blanket bluez bluez-utils blueberry boxes cpupower cowsay cma
 
 log "Enabling bluetooth service"
 sudo systemctl enable bluetooth.service
+
+log "Done"
