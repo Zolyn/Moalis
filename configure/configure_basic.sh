@@ -46,6 +46,10 @@ patch /etc/lightdm/lightdm.conf "$dir/patches/lightdm_conf.patch"
 log "Installing paru"
 pacman -S paru --noconfirm
 
+log "Modifying systemd config"
+echo "DefaultTimeoutStopSec=30" >> /etc/systemd/system.conf
+systemctl daemon-reload
+
 # Do not uncomment here unless you have already installed DE/WM.
 #log "Setting up LightDM service"
 #systemctl enable lightdm
