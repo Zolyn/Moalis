@@ -8,7 +8,7 @@ log() {
 dir=$(dirname $0)
 
 log "Installing system"
-pacstrap /mnt base base-devel linux linux-firmware git dhcpcd nano vim sudo networkmanager btrfs-progs
+pacstrap /mnt base base-devel linux linux-firmware git dhcpcd nano vi vim sudo networkmanager btrfs-progs
 
 log "Generating fstab"
 genfstab -U /mnt > /mnt/etc/fstab
