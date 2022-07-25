@@ -35,7 +35,7 @@ log "Installing X server"
 pacman -S xorg xorg-server --noconfirm
 
 log "Installing graphic card drivers"
-pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon --noconfirm
+pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel --noconfirm
 
 log "Installing LightDM"
 pacman -S lightdm lightdm-webkit2-greeter --noconfirm

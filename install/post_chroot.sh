@@ -2,9 +2,9 @@
 set -e
 
 dir=$(dirname $0)
-HOSTNAME="arch"
-CPU_BRAND="amd"
-RESOLUTION="1920 1080"
+HOSTNAME="laptop"
+CPU_BRAND="intel"
+RESOLUTION="1366 768"
 
 log() {
     echo "[Moalis:post_chroot] $1"
@@ -39,8 +39,8 @@ log "Installing ucode"
 pacman -S "$CPU_BRAND-ucode" --noconfirm
 
 log "Patching /etc/mkinitcpio.conf"
-patch /etc/mkinitcpio.conf "$dir/patches/mkinitcpio_amdgpu.patch"
-# patch /etc/mkinitcpio.conf "$dir/patches/mkinitcpio_intel_touchpad.patch"
+# patch /etc/mkinitcpio.conf "$dir/patches/mkinitcpio_amdgpu.patch"
+patch /etc/mkinitcpio.conf "$dir/patches/mkinitcpio_intel_touchpad.patch"
 
 log "Removing old refind configuration"
 rm /boot/efi/EFI/refind/refind.conf
