@@ -80,6 +80,9 @@ ls -ahl /boot/efi/EFI/refind/drivers_x64/
 log "Setting dhcpcd"
 systemctl enable dhcpcd
 
+log "Setting iwd"
+systemctl enable iwd
+
 log "Setting password for root"
 passwd root
 

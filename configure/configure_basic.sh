@@ -19,7 +19,6 @@ log "Configuring pacman"
 patch /etc/pacman.conf "$dir/patches/pacman_conf.patch"
 
 pacman -Syu --noconfirm
-pacman -S archlinuxcn-keyring --noconfirm
 
 log "Fixing archlinuxcn-keyring"
 pacman -Syu haveged --noconfirm
@@ -29,7 +28,8 @@ systemctl enable haveged
 rm -fr /etc/pacman.d/gnupg
 pacman-key --init
 pacman-key --populate archlinux
-pacman-key --populate archlinuxcn
+
+pacman -S archlinuxcn-keyring --noconfirm
 
 log "Installing X server"
 pacman -S xorg xorg-server --noconfirm
