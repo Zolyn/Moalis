@@ -39,11 +39,8 @@ log "Installing timeshift"
 paru -S timeshift --noconfirm
 
 log "Intalling packages"
-paru -S baobab bat bluez bluez-utils blueberry cpupower downgrade eom exa evince feh filelight ffmpeg flameshot fzf github-cli gnupg gnome-keyring gtk2 gtk3 htop imagemagick kcalc lolcat marktext-bin microsoft-edge-dev-bin mpd mpv mugshot neofetch numlockx net-tools peek p7zip paprefs pavucontrol pulseaudio picgo-appimage ranger screenfetch screenkey scrot skanlite smartmontools tar thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tldr unrar unzip ventoy-bin visual-studio-code-bin vlc wget xdman xdotool xss-lock yad yadm yay --noconfirm
+paru -S baobab bat cpupower cheese downgrade eom exa evince feh filelight ffmpeg flameshot fzf github-cli gnupg gnome-keyring gtk2 gtk3 htop imagemagick kcalc lolcat marktext-bin microsoft-edge-dev-bin mpd mpv mugshot neofetch numlockx net-tools peek p7zip paprefs pavucontrol pulseaudio picgo-appimage ranger screenfetch screenkey scrot skanlite smartmontools tar thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tldr unrar unzip ventoy-bin visual-studio-code-bin vlc variety wget xdman xdotool xss-lock yad yadm yay --noconfirm
 
 paru -S howdy
-
-# log "Enabling bluetooth service"
-# sudo systemctl enable bluetooth.service
 
 log "Done"
