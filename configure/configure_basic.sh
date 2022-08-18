@@ -10,7 +10,15 @@ USERNAME="zorin"
 
 log "Adding user $USERNAME"
 useradd -m -G wheel -s /bin/bash $USERNAME
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+# echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+
+cat >> /etc/sudoers << EOF
+Cmnd_Alias PASSWORDLESS = /usr/bin/amdfand
+
+%wheel ALL=(ALL) ALL
+$USERNAME ALL=(ALL) ALL
+$USERNAME ALL=(ALL) NOPASSWD: PASSWORDLESS
+EOF
 
 log "Setting password for user $USERNAME"
 passwd $USERNAME
