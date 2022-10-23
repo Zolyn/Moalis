@@ -26,15 +26,6 @@ patch:
     - schema: clover
 EOF
 
-log "Configuring Fcitx5"
-cat > ~/.pam_environment << EOF
-INPUT_METHOD DEFAULT=fcitx5
-GTK_IM_MODULE DEFAULT=fcitx5
-QT_IM_MODULE DEFAULT=fcitx5
-XMODIFIERS DEFAULT=\\@im=fcitx5
-SDL_IM_MODULE DEFAULT=fcitx
-EOF
-
 log "Installing timeshift"
 paru -S timeshift --noconfirm
 
