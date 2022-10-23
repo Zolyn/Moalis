@@ -53,10 +53,10 @@ patch /etc/lightdm/lightdm.conf "$dir/patches/lightdm_conf.patch"
 
 log "Configuring Fcitx5 before installing"
 cat > /etc/environment << EOF
-INPUT_METHOD=fcitx5
-GTK_IM_MODULE=fcitx5
-QT_IM_MODULE=fcitx5
-XMODIFIERS=\\@im=fcitx5
+INPUT_METHOD=fcitx
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
 EOF
 
