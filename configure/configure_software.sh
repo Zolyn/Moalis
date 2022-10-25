@@ -30,7 +30,7 @@ log "Installing timeshift"
 paru -S timeshift --noconfirm
 
 log "Intalling packages"
-paru -S baobab bat blanket bluez bluez-utils blueberry boxes cpupower cheese cowsay cmatrix cpu-x downgrade dmidecode eom exa evince feh filelight ffmpeg flameshot figlet fzf github-cli gnupg gnome-keyring gpu-viewer gtk2 gtk3 htop imagemagick inotify-tools kcalc kdeconnect krita lolcat libva-mesa-driver marktext-bin microsoft-edge-dev-bin mpd mpv mugshot neofetch numlockx net-tools obs-studio peek p7zip paprefs pavucontrol pulseaudio picgo-appimage ranger redshift screenfetch screenkey scrot skanlite smartmontools tar thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tldr toilet unrar unzip ventoy-bin visual-studio-code-bin vlc wget wps-office-cn wps-office-mime-cn wps-office-mui-zh-cn xdman xdotool xss-lock xwinwrap-git yad yadm yay --noconfirm
+paru -S baobab bat blanket bluez bluez-utils blueberry boxes cpupower cheese cowsay cmatrix cpu-x downgrade dmidecode eom exa evince feh filelight ffmpeg flameshot figlet fzf github-cli gnupg gnome-keyring gpu-viewer gtk2 gtk3 htop imagemagick inotify-tools kcalc kdeconnect krita lolcat libva-mesa-driver marktext-bin microsoft-edge-dev-bin mpd mpv mugshot namcap neofetch numlockx net-tools obs-studio peek p7zip paprefs pavucontrol pulseaudio picgo-appimage ranger redshift screenfetch screenkey scrot skanlite smartmontools tar thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tldr toilet unrar unzip ventoy-bin visual-studio-code-bin vlc wget wps-office-cn wps-office-mime-cn wps-office-mui-zh-cn xdman xdotool xss-lock xwinwrap-git yad yadm yay --noconfirm
 
 paru -S howdy linux-enable-ir-emitter
 
